@@ -8,3 +8,10 @@ export const updateLoginForm = (formData) => {
     }
 
 }
+
+export const resetLoginForm = () => {
+    return {
+        type: "RESET_LOGIN_FORM"
+    }
+
+}
