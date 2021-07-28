@@ -4,6 +4,7 @@ import currentUser from './reducers/currentUser'
 import loginForm from './reducers/loginForm'
 import myOrders from './reducers/myOrders'
 import signupForm from './reducers/signupForm.js'
+import allItems from './reducers/allItems.js'
 import thunk from 'redux-thunk'
 
 const reducer = combineReducers({
@@ -11,7 +12,8 @@ const reducer = combineReducers({
     currentUser, 
     loginForm,
     myOrders, 
-    signupForm
+    signupForm,
+    allItems
 })
 
 
