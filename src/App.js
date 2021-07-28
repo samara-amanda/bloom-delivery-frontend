@@ -4,11 +4,12 @@ import { connect } from 'react-redux'
 import { getCurrentUser } from './actions/currentUser.js'
 import NavBar from './components/NavBar.js'
 import Login from './components/Login.js'
+import Logout from './components/Logout.js'
 import Signup from './components/Signup.js';
-import { BrowserRouter, Switch } from 'react-router-dom'
-import { Route } from 'react-router'
-
 import MyOrders from './components/MyOrders.js';
+import MyCart from './components/MyCart.js'
+import Home from './components/Home.js'
+import { Route, Switch } from 'react-router'
 
 class App extends React.Component {
 
@@ -17,20 +18,20 @@ class App extends React.Component {
   }
 
   render() {
+    const {loggedIn} = this.props
       return (
       
         <div className="App">
-          <BrowserRouter>
+          { loggedIn ? <Logout/> : null}
           <NavBar/>
-
             <Switch>
-              
-              
+              <Route exact path='/' render={() => loggedIn ? <MyOrders/> : <Home/>}/>
               <Route exact path='/signup' component={Signup}/>
               <Route exact path='/login' component={Login}/>
               <Route exact path='/my-orders' component={MyOrders}/>
+
             </Switch>
-          </BrowserRouter>
+          
         </div>
       );
   }
@@ -40,10 +41,10 @@ class App extends React.Component {
 // and I know it has a property called currentUser
 //state = { ...
 //  currentUser: {...}
-const mapStateToProps = ({ currentUser }) => {
-  return {
-    currentUser
-  }
+const mapStateToProps = state => {
+  return ({
+    loggedIn: !!state.currentUser
+  })
 }
 
 export default connect(mapStateToProps, { getCurrentUser })(App);
