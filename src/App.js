@@ -7,7 +7,7 @@ import Login from './components/Login.js'
 import Logout from './components/Logout.js'
 import Signup from './components/Signup.js';
 import MyOrders from './components/MyOrders.js';
-import MyCart from './components/MyCart.js'
+import AllItems from './components/AllItems.js'
 import Home from './components/Home.js'
 import { Route, Switch } from 'react-router'
 
@@ -29,7 +29,7 @@ class App extends React.Component {
               <Route exact path='/signup' component={Signup}/>
               <Route exact path='/login' component={Login}/>
               <Route exact path='/my-orders' component={MyOrders}/>
-
+              <Route exact path='/shop' component={AllItems}/>
             </Switch>
           
         </div>
