@@ -13,7 +13,7 @@ const reducer = combineReducers({
     loginForm,
     myOrders, 
     signupForm,
-    allItems
+    items: allItems
 })
 
 
