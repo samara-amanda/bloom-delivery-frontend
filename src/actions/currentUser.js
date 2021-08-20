@@ -66,7 +66,7 @@ export const login = (info, history) => {
                 dispatch(setCurrentUser(user.data))
                 dispatch(getMyOrders())
                 dispatch(resetLoginForm())
-                history.push('/')
+                
             }
         })
         .catch(console.log())

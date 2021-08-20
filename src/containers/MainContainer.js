@@ -1,13 +1,43 @@
-import React from 'react'
+import { map } from 'async'
+import { Component }from 'react'
+import { connect } from 'react-redux'
+import { Route, Switch } from 'react-router'
+import NavBar from '../components/NavBar'
+import Login from '../components/Login'
+import Logout from '../components/Logout'
+import Signup from '../components/Signup'
 import MyOrders from '../components/MyOrders'
+import Home from '../components/Home'
+import { getCurrentUser } from '../actions/currentUser.js'
+import { Redirect } from 'react-router-dom'
 
-const MainContainer = () => {
-    return (
-        <div className="MainContainer">
-            <MyOrders/>
 
-        </div>
-    )
+class MainContainer extends Component {
+
+    componentDidMount() {
+        this.props.getCurrentUser()
+    }
+
+    render() {
+        const {loggedIn} = this.props
+        return(
+            <div>
+                { loggedIn ? <Logout/> : null}
+                <NavBar />
+                <Switch>
+                    <Route exact path='/' component={Home}/>
+                    <Route exact path='/signup' render={() => loggedIn ? <Redirect to="/"/> : <Signup/>}/>
+                    <Route exact path='/login' render={() => loggedIn ? <Redirect to="/"/> : <Login/>}/>
+                </Switch>
+            </div>
+        )
+    }
 }
 
-export default MainContainer
+const mapStateToProps = state => {
+    return ({
+      loggedIn: !!state.currentUser
+    })
+}
+  
+export default connect(mapStateToProps, { getCurrentUser })(MainContainer);

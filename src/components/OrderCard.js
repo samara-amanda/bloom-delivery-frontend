@@ -8,6 +8,9 @@ const OrderCard = ({ order  }) => {
         <div key={item.id}>
             <li>
                 {item.name} ${item.price}
+                <br></br>
+                <img src={item.image}  width="150" height="150"/>
+
             </li>
         </div>
     )
