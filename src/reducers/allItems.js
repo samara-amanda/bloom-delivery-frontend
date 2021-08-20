@@ -1,8 +1,10 @@
 // eslint-disable-next-line 
-export default (state = [], action) => {
+export default (state = {items: []}, action) => {
     switch(action.type) {
-        case "SET_ALL_ITEMS":
-            return action.items
+        case "FETCH_ITEMS":
+            return {
+                items: action.payload
+            } 
         default:
             return state
     }
