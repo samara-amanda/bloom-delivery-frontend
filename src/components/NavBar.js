@@ -1,14 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-
 const NavBar = ({ currentUser }) => {
     return (
         <div className="nav">
-            { currentUser ? <p>Welcome, {currentUser.attributes.name}</p> : "" }
-        
-
-            
+            <h1>Bloom Delivery</h1>
+            { currentUser ? <h3>Welcome, {currentUser.attributes.name}</h3> : "" }
         </div>
     )
 }
