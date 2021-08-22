@@ -21,7 +21,6 @@ class MainContainer extends Component {
         const {loggedIn} = this.props
         return(
             <div>
-                { loggedIn ? <Logout/> : null}
                 <NavBar />
                 <Switch>
                     <Route exact path='/' component={Home}/>
