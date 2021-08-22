@@ -1,30 +1,47 @@
 import { render } from '@testing-library/react'
 import React from 'react'
 
-const OrderCard = ({ order  }) => {
-    const items = order.attributes.order_items
+const OrderCard = (props) => {
 
-    const list = items.map(item => 
-        <div key={item.id}>
-            <li>
-                {item.name} ${item.price}
-                <br></br>
-                <img src={item.image}  width="150" height="150"/>
+    // const list = orders.map(order => {
+    //     order.attributes.order_items.map(item => {
+    //         <div key={item.id}>
+    //             <li>
+    //                 {item.attributes.order_items.name} ${item.attributes.order_items.price}
+    //                 <br></br>
+    //                 <img src={item.attributes.order_items.image}  width="150" height="150"/>
 
-            </li>
-        </div>
-    )
-    
+    //             </li>
+    //         </div>
+    //     })
+        
+    // })
+    {console.log(props)}
+
     
     return (
-        <div key={order.id}>
-            <h3>Order #{order.id}</h3>
-            <small>Order Date: {order.attributes.created_at}</small>
-            <p></p>
+        <div >
             
-            <h3>{list}</h3>
-            
+            {/* <h3>
+                {orders.map(order => {
+                    <>
+                    
+                    <h3>Order #{order.id}</h3>
+                    <p>Order Date: {order.created_at}</p>
 
+                    </>
+
+                    order.attributes.order_items.map(item => {
+                        <div key={item.id}>
+                            <li>
+                                {item.attributes.order_items.name} ${item.attributes.order_items.price}
+                                <br></br>
+                                <img src={item.attributes.order_items.image}  width="150" height="150"/>
+                            </li>
+                        </div>
+                    })
+                })}
+            </h3> */}
         </div>
     )
     
