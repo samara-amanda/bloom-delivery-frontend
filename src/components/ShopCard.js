@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const ShopCard = (props) => {
-    
-    const list = props.items.map(i => 
-        <div key={i.id}>
+const ShopCard = ({ items }) => {
+    return (
+        <div className="shop-list">
+            {items.map(i => 
+        <div key={i.id} name={"shop-card-" + i.id}>
             <ul>
                 <li>
                 <center>
@@ -22,13 +23,7 @@ const ShopCard = (props) => {
                 </li>
             </ul>
         </div>
-    )
-    
-
-
-    return (
-        <div >
-            <h3>{list}</h3>
+    )}
         </div>
     )
 }
