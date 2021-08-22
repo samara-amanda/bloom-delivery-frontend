@@ -22,13 +22,29 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input placeholder="name" value={signupFormData.name} name="name" type="text" onChange={formHandler} />
-      <input placeholder="email" value={signupFormData.email} name="email" type="text" onChange={formHandler} />
-      <input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={formHandler} />
-      <input placeholder="address" value={signupFormData.address} name="address" type="text" onChange={formHandler} />
-      <input type="submit" value="Sign Up"/>
+    <div class="row">
+    <form class="col s12" onSubmit={handleSubmit}>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="icon_prefix" type="text" class="validate" name="name" value={signupFormData.name} onChange={formHandler}/>
+          <label for="icon_prefix">Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="icon_telephone" type="text" name="email" class="validate" value={signupFormData.email} onChange={formHandler}/>
+          <label for="icon_telephone">Email</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="icon_telephone" type="text" name="password" class="validate" value={signupFormData.password} onChange={formHandler}/>
+          <label for="icon_telephone">Password</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="icon_telephone" type="text" name="address" class="validate" value={signupFormData.address} onChange={formHandler}/>
+          <label for="icon_telephone">Address</label>
+        </div>
+        <a class="waves-effect grey lighten-1 btn"><input type="submit" value="Sign Up" /></a>
+      </div>
     </form>
+  </div>
   )
 }
 

@@ -20,11 +20,21 @@ const Login = ({ loginForm, updateLoginForm, login }) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input placeholder="email" value={loginForm.email} name="email" type="text" onChange={handleInputChange} />
-            <input placeholder="password" value={loginForm.password} name="password" type="text" onChange={handleInputChange}  />
-            <input type="submit" value="Log In" />
-        </form>
+
+        <div class="row">
+            <form class="col s12" onSubmit={handleSubmit}>
+            <div class="row">
+                <div class="input-field col s6">
+                <input id="icon_prefix" type="text" class="validate" name="email" value={loginForm.email} onChange={handleInputChange}/>
+                <label for="icon_prefix">Email</label>
+                </div>
+                <div class="input-field col s6">
+                <input id="icon_prefix" type="password" class="validate" name="password" value={loginForm.password} onChange={handleInputChange}/>
+                <label for="icon_prefix">Password</label>
+                </div>
+                <a class="waves-effect grey lighten-1 btn"><input type="submit" value="Login" /></a>            </div>
+            </form>
+        </div>
     )
 }
 
