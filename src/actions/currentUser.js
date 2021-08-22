@@ -1,6 +1,6 @@
 import { resetLoginForm } from './loginForm.js'
 import { resetSignupForm } from './signupForm.js'
-import { getMyOrders } from './myOrders.js'
+import { fetchOrders } from './manageOrders.js'
 
 //synchronous action creators
 //returns plain JS objects
@@ -38,7 +38,7 @@ export const signup = (info, history) => {
             alert(response.error)
           } else {
             dispatch(setCurrentUser(response.data))
-            dispatch(getMyOrders())
+            dispatch(fetchOrders())
             dispatch(resetSignupForm())
             history.push('/')
           }
@@ -64,7 +64,7 @@ export const login = (info, history) => {
                 alert(user.error)
             } else {
                 dispatch(setCurrentUser(user.data))
-                dispatch(getMyOrders())
+                dispatch(fetchOrders())
                 dispatch(resetLoginForm())
                 
             }
@@ -98,7 +98,7 @@ export const getCurrentUser = () => {
                 alert(user.error)
             } else {
                 dispatch(setCurrentUser(user.data))
-                dispatch(getMyOrders())
+                dispatch(fetchOrders())
             }
         })
         .catch(console.log())
