@@ -1,7 +1,11 @@
 # Bloom Delivery 
 A mock Venus Et Fleur, flower delivery e-commerce site.
 
+<<<<<<< HEAD
 Link to Backend Repository: 
+=======
+# Link to Backend Repo
+>>>>>>> 842e1f29b789a15625e962bf065172d7dbe35e7b
 https://github.com/samaracodes/bloom-delivery-backend
 
 An MVP SPA React/Redux Frontend application with a Rails API backend that demonstrates Client-Server Communication and uses:
