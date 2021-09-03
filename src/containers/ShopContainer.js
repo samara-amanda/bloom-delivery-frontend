@@ -18,7 +18,7 @@ class ShopContainer extends Component {
             <div>
                 <Switch>
                     <Route exact path='/shop' render={(routerProps) => <ShopCard {...routerProps} items={this.props.items.items} />} />
-                    {/* <Route exact path='/my-orders' render={(routerProps) => loggedIn ? <OrderCard {...routerProps} orders={this.props.orders.orders} /> : "" } /> */}
+                    <Route exact path='/my-orders' render={(routerProps) => loggedIn ? <OrderCard {...routerProps} orders={this.props.orders} /> : "" } />
 
                 </Switch>
             </div>
@@ -36,7 +36,7 @@ class ShopContainer extends Component {
         return {
             items: state.items,
             orders: state.orders,
-            loggedIn: !!state.currentUser
+            loggedIn: state.currentUser
         }
     }
 
