@@ -14,7 +14,7 @@ const NavBar = ({ currentUser }) => {
                     <li>{ !currentUser ?  <Link to="login" >Login</Link> : null}</li>
                     <li>{ currentUser ? <Link to="/my-orders">My Orders</Link> : null }</li>
                     <li><Link to="/shop">Shop</Link></li>
-                    <li><a href="sass.html">About</a></li>
+                    <li><Link to="/about">About</Link></li>
                     <li>{currentUser ? <Logout/> : null }</li>
                 </ul>
                 
