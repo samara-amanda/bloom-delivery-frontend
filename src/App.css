@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
+    color: black;
   }
   
   #loggedin {
@@ -48,7 +48,7 @@
   .card {
   }
 
-.row .col {
+.shop-card .col {
   display: grid; 
   grid-template-columns: repeat(4, 250px);
   grid-auto-rows: auto;
@@ -59,6 +59,23 @@
   justify-content:space-around;
 
 }
+
+.order-card .col {
+  display: grid; 
+  grid-template-columns: repeat(4, 250px);
+  grid-auto-rows: auto;
+  grid-gap: 4rem;
+  float: none !important;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content:space-around;
+}
+
+.brand-logo {
+  font-weight: 200;
+}
+
+
 
 
 

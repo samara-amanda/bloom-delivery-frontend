@@ -7,13 +7,14 @@ const ShopCard = ({ items }) => {
             <div class="shop">
                 
                 <center>
-                <img class="materialboxed" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/maison-0311-vef1574-1590173699.jpg" width="1300" height="800"/>
+                <img class="materialboxed" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/maison-0311-vef1574-1590173699.jpg" width="1300" height="760"/>
 
                 <div class="caption center-align">
                     <h5 class="light grey-text text-ighten-3 hide-on-small-only">Shop all of our new favorites!</h5>
                 </div>
                 
                     <div class="row">
+                        <div class="shop-card">
                         <div class="col s12 m4">
                             
                             {items.map(i =>
@@ -28,6 +29,7 @@ const ShopCard = ({ items }) => {
                                     </div>
                                 </div>
                             )}
+                        </div>
                         </div>
                     </div>
                     </center>
