@@ -26,23 +26,43 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
     <form class="col s12" onSubmit={handleSubmit}>
       <div class="row">
         <div class="input-field col s6">
-          <input id="icon_prefix" type="text" class="validate" name="name" value={signupFormData.name} onChange={formHandler}/>
-          <label for="icon_prefix">Name</label>
+          <input id="name" type="text" class="validate" name="name" value={signupFormData.name} onChange={formHandler}/>
+          <label for="name">Name</label>
+          <br></br>
+
         </div>
+        </div>
+
+        <div class="row">
         <div class="input-field col s6">
-          <input id="icon_telephone" type="text" name="email" class="validate" value={signupFormData.email} onChange={formHandler}/>
-          <label for="icon_telephone">Email</label>
+          <input id="email" type="text" name="email" class="validate" value={signupFormData.email} onChange={formHandler}/>
+          <label for="email">Email</label>
+          <br></br>
+
         </div>
+        </div>
+
+        <div class="row">
         <div class="input-field col s6">
-          <input id="icon_telephone" type="text" name="password" class="validate" value={signupFormData.password} onChange={formHandler}/>
-          <label for="icon_telephone">Password</label>
+          <input id="password" type="password" name="password" class="validate" value={signupFormData.password} onChange={formHandler}/>
+          <label for="password">Password</label>
+          <br></br>
+
         </div>
+        </div>
+
+        <div class="row">
         <div class="input-field col s6">
-          <input id="icon_telephone" type="text" name="address" class="validate" value={signupFormData.address} onChange={formHandler}/>
-          <label for="icon_telephone">Address</label>
+          <input id="address" type="text" name="address" class="validate" value={signupFormData.address} onChange={formHandler}/>
+          <label for="address">Address</label>
+          <br></br>
+
         </div>
-        <a class="waves-effect grey lighten-1 btn"><input type="submit" value="Sign Up" /></a>
-      </div>
+        </div>
+        <br></br>
+
+        <a class="waves-effect pink darken-1 btn"><input type="submit" value="Sign Up" /></a>
+     
     </form>
   </div>
   )
