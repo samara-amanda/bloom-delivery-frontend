@@ -5,7 +5,7 @@ import { logout } from '../actions/currentUser.js'
 const Logout = ({ logout }) => {
     return (
         <form onSubmit={logout}>
-            <a class="waves-effect grey lighten-1 btn"><input type="submit" value="Logout" /></a>
+            <a class="waves-effect waves-teal btn-flat"><input class="grey-text text-lighten-3 " type="submit" value="Logout" /></a>
         </form>
         
     )
