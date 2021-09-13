@@ -32,7 +32,7 @@ const Login = ({ loginForm, updateLoginForm, login }) => {
                         <input id="password" type="password" class="validate" name="password" value={loginForm.password} onChange={handleInputChange}/>
                         <label for="password">Password</label>
                     </div>
-                    <a class="waves-effect pink darken-1 btn"><input type="submit" value="Login" /></a>
+                    <a href="" class="waves-effect pink darken-1 btn"><input type="submit" value="Login" /></a>
                 </div>
             </form>
         </div>

@@ -61,7 +61,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) => {
         </div>
         <br></br>
 
-        <a class="waves-effect pink darken-1 btn"><input type="submit" value="Sign Up" /></a>
+        <a href="" class="waves-effect pink darken-1 btn"><input type="submit" value="Sign Up" /></a>
      
     </form>
   </div>
