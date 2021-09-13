@@ -21,7 +21,7 @@
   </head>
 
   <body>
-     <div id="root"></div>
+  
 
      <!--Import jQuery before materialize.js-->
      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -31,10 +31,12 @@
 
      <!--Materializecss Slider-->
      <script>
-      $(document).ready(function () {
-          $('.slider').slider({full_width: true, height: 800});
+      $(document).ready(function(){
+      $('.slider').slider({interval: 2000});
       });
-  </script>      
+    </script>      
+
+<div id="root"></div>
   </body>
   
 </html>
