@@ -11,9 +11,9 @@ const reducer = combineReducers({
     users: usersReducer, 
     currentUser, 
     loginForm,
-    orders: myOrders, 
+    myOrders, 
     signupForm,
-    items: allItems
+    allItems
 })
 
 

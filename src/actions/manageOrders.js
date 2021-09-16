@@ -9,12 +9,12 @@
 //     }
 // }
 
-export const setMyOrders = orders => {
-    return {
-        type: "FETCH_ORDERS",
-        orders //PAYLOAD
-    }
-}
+// export const setMyOrders = orders => {
+//     return {
+//         type: "FETCH_ORDERS",
+//         payload: orders.data //PAYLOAD
+//     }
+// }
 
 //asynchronous actions
 export const fetchOrders = () => {
@@ -27,11 +27,11 @@ export const fetchOrders = () => {
              },
         })
         .then (r => r.json())
-        .then(response => {
-            if (response.error) {
-                alert(response.error)
+        .then(orders => {
+            if (orders.error) {
+                alert(orders.error)
             } else {
-                dispatch(setMyOrders(response.data))
+                dispatch({type: 'FETCH_ORDERS', payload: orders.data})
             }
         })
         .catch(console.log())
