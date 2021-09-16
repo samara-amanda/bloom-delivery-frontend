@@ -16,10 +16,11 @@ const AboutCard = () => {
                 </ul>
             </div>
 
-            <h4 class="thin grey-text">The Creator of this AMAZING mock Venus Et Fluer e-commerce app... <br></br>Samara Grant.</h4>
-            <p> Bloom Delivery was created as my final capstone project at Flatiron School. <br></br>
-                A MVP single page application with a backend API that demonstrates client-sever communication.<br></br>
-                The stack that I used to create Bloom Delivery: </p>
+            <div class="center">
+                <h4 class="thin grey-text">The Creator of this AMAZING mock Venus Et Fluer e-commerce app... <br></br>Samara Grant.</h4>
+                <p> Bloom Delivery was created as my final capstone project at Flatiron School. <br></br>
+                    A MVP single page application with a backend API that demonstrates client-sever communication.<br></br>
+                    The stack that I used to create Bloom Delivery: </p>
 
                 <h5>Frontend</h5>
                 <ul>
@@ -37,10 +38,8 @@ const AboutCard = () => {
 
                 <h6><a href="https://github.com/samaracodes/bloom-delivery-frontend">Link to this Github Repo</a></h6>
                 <p></p>
-                
-                
+            </div>
 
-            
         </>
     )
 
