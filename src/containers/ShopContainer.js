@@ -1,5 +1,5 @@
 import { map } from 'async'
-import { Component }from 'react'
+import { Component, useEffect, useState }from 'react'
 import { connect } from 'react-redux'
 import { Route, Switch } from 'react-router'
 import { fetchItems } from '../actions/fetchItems'
@@ -10,32 +10,41 @@ import OrderCard from '../components/OrderCard'
 import NavBar from '../components/NavBar'
 
 class ShopContainer extends Component {
+    constructor() {
+        super()
+        this.state = {
+            orders: [],
+            items: []
+        }
+    }
 
     render() {
         const {loggedIn} = this.props
 
         return(
-            <div>
+            <>
                 <Switch>
-                    <Route exact path='/shop' render={(routerProps) => <ShopCard {...routerProps} items={this.props.items.items} />} />
-                    <Route exact path='/my-orders' render={(routerProps) => loggedIn ? <OrderCard {...routerProps} orders={this.props.orders} /> : "" } />
+                    <Route exact path='/shop' render={(routerProps) => <ShopCard {...routerProps} items={this.props.items} />} />
+                    <Route exact path='/my-orders' render={(routerProps) => loggedIn ? <OrderCard {...routerProps} orders={this.props.orders} /> : null } />
 
                 </Switch>
-            </div>
+            </>
         )
     }
 
     componentDidMount() {
         this.props.fetchItems()
-        this.props.fetchOrders()
         this.props.getCurrentUser()
+        this.props.fetchOrders() 
     }
+
+
 }
 
     const mapStateToProps = state => {
         return {
-            items: state.items,
-            orders: state.orders,
+            items: state.allItems.items,
+            orders: state.myOrders.orders,
             loggedIn: state.currentUser
         }
     }
