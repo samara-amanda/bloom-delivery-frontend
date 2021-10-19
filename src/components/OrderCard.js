@@ -6,7 +6,7 @@ import { uniqueId } from 'lodash/uniqueId'
 const OrderCard = ({orders}) => {
 
     return (
-        <>
+        <div class="my-orders-container">
             <div class="slider">
                 <ul class="slides">
                     <li>
@@ -48,7 +48,7 @@ const OrderCard = ({orders}) => {
                 </div>
 
             )}
-        </>    
+        </div>    
         
     )
 }
