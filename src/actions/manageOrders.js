@@ -19,7 +19,7 @@
 //asynchronous actions
 export const fetchOrders = () => {
     return dispatch => {
-        return fetch("https://bloom-delivery.herokuapp.com/api/v1/orders", {
+        return fetch("https://bloom-delivery-api.herokuapp.com/api/v1/orders", {
             credentials: "include",
             method: "GET", 
             headers: {
