@@ -10,7 +10,7 @@ const Home = ({ currentUser }) => {
             <div class="slider fullscreen">
                 <ul class="slides">
                     <li>
-                        <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.6435-9/31841937_926683800824343_2841788991416565760_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=e3f864&_nc_ohc=HaSd4_MP2J8AX9z_BWx&_nc_ht=scontent-lga3-1.xx&oh=36566cdf96b807ab3eaf37a351e36508&oe=6146513F"/>
+                        <img src="https://cdn.shopify.com/s/files/1/0859/1856/files/fleuraftimage_2048x2048.jpg?v=1589894774"/>
                         <div class="caption center-align">
                         <h2>Welcome to Bloom Delivery!</h2>
                         <h5 class="thin black-text text-lighten-3">These iconic arrangements embody everything Bloom Delivery–sophistication and class. Real Roses That Last A Year.</h5><br></br>
