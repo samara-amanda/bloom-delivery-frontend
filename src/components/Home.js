@@ -10,7 +10,7 @@ const Home = ({ currentUser }) => {
             <div class="slider fullscreen">
                 <ul class="slides">
                     <li>
-                        <img src="https://cdn.shopify.com/s/files/1/0859/1856/files/mothersday2ftimage2_2048x2048.jpg?v=1586890808"/>
+                        <img src="download.jpeg"/>
                         <div class="caption center-align">
                         <h2>Welcome to Bloom Delivery!</h2>
                         <h5 class="thin black-text text-lighten-3">These iconic arrangements embody everything Bloom Delivery–sophistication and class. Real Roses That Last A Year.</h5><br></br>
