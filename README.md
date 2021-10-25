@@ -1,6 +1,9 @@
 # Bloom Delivery 
 A mock Venus Et Fleur, flower delivery e-commerce site.
 
+![App Image](public/screenshot1.png "Title")
+
+
 # Link to Backend Repo
 https://github.com/samaracodes/bloom-delivery-backend
 
