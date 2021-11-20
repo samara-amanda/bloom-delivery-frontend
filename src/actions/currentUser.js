@@ -92,15 +92,19 @@ export const getCurrentUser = () => {
                 "Content-Type": "application/json"
             },
         })
-        .then (r => r.json())
+        .then (response => { response.text()})
         .then(user => {
-            if (user.error) {
-                alert(user.error)
-            } else {
-                dispatch(setCurrentUser(user.data))
-                dispatch(fetchOrders())
-            }
+            resolve(data ? JSON.parse(user) : {})
+            // if (user.error) {
+            //     alert(user.error)
+            // } else {
+            //     dispatch(setCurrentUser(user.data))
+            //     dispatch(fetchOrders())
+            // }
         })
-        .catch(console.log())
+        // .catch(console.log())
+        .catch((error) => {
+            reject(error)
+        })
     }
 }

@@ -23,7 +23,8 @@ export const fetchOrders = () => {
             credentials: "include",
             method: "GET", 
             headers: {
-                "Content-Type": "application/json"             },
+                "Content-Type": "application/json"
+            },
         })
         .then (r => r.json())
         .then(orders => {
