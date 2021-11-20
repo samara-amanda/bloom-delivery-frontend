@@ -85,7 +85,7 @@ export const logout = () => {
 
 export const getCurrentUser = () => {
     return dispatch => { 
-        return fetch("https://cors-anywhere.herokuapp.com/https://bloom-delivery-api.herokuapp.com/api/v1/get_current_user", {
+        return fetch("https://bloom-delivery-api.herokuapp.com/api/v1/get_current_user", {
             credentials: "include",
             method: "GET", 
             headers: {
