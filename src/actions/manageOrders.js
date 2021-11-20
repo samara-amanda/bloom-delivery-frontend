@@ -23,9 +23,7 @@ export const fetchOrders = () => {
             credentials: "include",
             method: "GET", 
             headers: {
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": 'https://bloom-delivery-api.herokuapp.com'
-             },
+                "Content-Type": "application/json"             },
         })
         .then (r => r.json())
         .then(orders => {
