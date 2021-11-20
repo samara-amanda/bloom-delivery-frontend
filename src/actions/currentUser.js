@@ -92,7 +92,7 @@ export const getCurrentUser = () => {
                 "Content-Type": "application/json"
             },
         })
-        .then (response => response.text())
+        .then (response => response.json())
         .then(user => {
             if (user.error) {
                 alert(user.error)
