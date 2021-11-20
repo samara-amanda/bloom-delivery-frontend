@@ -89,7 +89,8 @@ export const getCurrentUser = () => {
             credentials: "include",
             method: "GET", 
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Credentials": "true"
             },
         })
         .then (r => r.json())
