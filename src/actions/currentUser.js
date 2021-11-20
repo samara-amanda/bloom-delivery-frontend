@@ -85,26 +85,22 @@ export const logout = () => {
 
 export const getCurrentUser = () => {
     return dispatch => { 
-        return fetch("https://bloom-delivery-api.herokuapp.com/api/v1/get_current_user", {
+        return fetch("https://cors-anywhere.herokuapp.com/https://bloom-delivery-api.herokuapp.com/api/v1/get_current_user", {
             credentials: "include",
             method: "GET", 
             headers: {
                 "Content-Type": "application/json"
             },
         })
-        .then (response => { response.text()})
+        .then (response => response.text())
         .then(user => {
-            resolve(data ? JSON.parse(user) : {})
-            // if (user.error) {
-            //     alert(user.error)
-            // } else {
-            //     dispatch(setCurrentUser(user.data))
-            //     dispatch(fetchOrders())
-            // }
+            if (user.error) {
+                alert(user.error)
+            } else {
+                dispatch(setCurrentUser(user.data))
+                dispatch(fetchOrders())
+            }
         })
-        // .catch(console.log())
-        .catch((error) => {
-            reject(error)
-        })
+        .catch(console.log())
     }
 }
