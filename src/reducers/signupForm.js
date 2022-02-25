@@ -5,6 +5,7 @@ const initialState = {
     address: ""
 }
 
+// eslint-disable-next-line
 export default (state = initialState, action) => {
     switch (action.type) {
         case "UPDATE_SIGNUP_FORM":
