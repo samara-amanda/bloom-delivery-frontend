@@ -4,20 +4,20 @@ const AboutCard = () => {
     return (
         <>
 
-            <div class="slider">
-                <ul class="slides">
+            <div className="slider">
+                <ul className="slides">
                     <li>
-                        <img  src="https://www.datocms-assets.com/9364/1558461271-the-vaan-group-client-venus-et-fleur.jpg" />
-                        <div class="caption center-align">
+                        <img src="https://www.datocms-assets.com/9364/1558461271-the-vaan-group-client-venus-et-fleur.jpg" alt="Site Carousel" />
+                        <div className="caption center-align">
                             <h2>About Us</h2>
-                            <h5 class="thin text-lighten-3">Learn about our story, where this all started. </h5><br></br>
+                            <h5 className="thin text-lighten-3">Learn about our story, where this all started. </h5><br></br>
                         </div>
                     </li>
                 </ul>
             </div>
 
-            <div class="center">
-                <h4 class="thin grey-text">The Creator of this AMAZING mock Venus Et Fluer e-commerce app... <br></br>Samara Grant.</h4>
+            <div className="center">
+                <h4 className="thin grey-text">The Creator of this AMAZING mock Venus Et Fluer e-commerce app... <br></br>Samara Grant.</h4>
                 <p> Bloom Delivery was created as my final capstone project at Flatiron School. <br></br>
                     A MVP single page application with a backend API that demonstrates client-sever communication.<br></br>
                     The stack that I used to create Bloom Delivery: </p>
