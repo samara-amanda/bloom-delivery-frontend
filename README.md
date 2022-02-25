@@ -1,5 +1,5 @@
 # Bloom Delivery 
-A mock Venus Et Fleur, flower delivery e-commerce site.
+A flower delivery e-commerce site.
 
 ![App Image](public/screenshot1.png "Title")
 ![App Image](public/screenshot3.png "Title")
