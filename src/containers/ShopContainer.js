@@ -1,5 +1,4 @@
-import { map } from 'async'
-import { Component, useEffect, useState }from 'react'
+import { Component}from 'react'
 import { connect } from 'react-redux'
 import { Route, Switch } from 'react-router'
 import { fetchItems } from '../actions/fetchItems'
@@ -7,17 +6,8 @@ import { fetchOrders } from '../actions/manageOrders'
 import { getCurrentUser } from '../actions/currentUser'
 import ShopCard from '../components/ShopCard'
 import OrderCard from '../components/OrderCard'
-import NavBar from '../components/NavBar'
 
 class ShopContainer extends Component {
-    constructor() {
-        super()
-        this.state = {
-            orders: [],
-            items: []
-        }
-    }
-
     render() {
         const {loggedIn} = this.props
 
@@ -37,8 +27,6 @@ class ShopContainer extends Component {
         this.props.getCurrentUser()
         this.props.fetchOrders() 
     }
-
-
 }
 
     const mapStateToProps = state => {

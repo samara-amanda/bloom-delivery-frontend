@@ -1,14 +1,12 @@
-import { map } from 'async'
 import { Component }from 'react'
 import { connect } from 'react-redux'
 import { Route, Switch } from 'react-router'
 import NavBar from '../components/NavBar'
 import Login from '../components/Login'
-import Logout from '../components/Logout'
 import About from '../components/About'
 import Signup from '../components/Signup'
 import Home from '../components/Home'
-import { getCurrentUser } from '../actions/currentUser.js'
+import { getCurrentUser } from '../actions/currentUser'
 import { Redirect } from 'react-router-dom'
 
 
@@ -22,7 +20,7 @@ class MainContainer extends Component {
         const {loggedIn} = this.props
         return(
             <div>
-                <NavBar />
+                <NavBar currentUser={loggedIn} />
                 <Switch>
                     <Route exact path='/' component={Home}/>
                     <Route exact path='/signup' render={() => loggedIn ? <Redirect to="/"/> : <Signup/>}/>
