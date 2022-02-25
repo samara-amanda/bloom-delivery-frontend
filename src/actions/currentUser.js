@@ -1,9 +1,36 @@
-import { resetLoginForm } from './loginForm.js'
-import { resetSignupForm } from './signupForm.js'
 import { fetchOrders } from './manageOrders.js'
 
 //synchronous action creators
 //returns plain JS objects
+export const updateSignupForm = formData => {
+    return {
+      type: "UPDATE_SIGNUP_FORM",
+      formData
+    }
+  }
+  
+export const resetSignupForm = () => {
+    return {
+      type: "RESET_SIGNUP_FORM"
+    }
+}
+
+
+export const updateLoginForm = (formData) => {
+    return {
+        type: "UPDATE_LOGIN_FORM", 
+       formData
+    }
+
+}
+
+export const resetLoginForm = () => {
+    return {
+        type: "RESET_LOGIN_FORM"
+    }
+}
+
+
 export const setCurrentUser = user => {
     return {
         type:"SET_CURRENT_USER" ,
@@ -19,12 +46,35 @@ export const clearCurrentUser = () => {
 
 // asynchronous action creators
 // returns a function, within the function we return a promise
-export const signup = (info, history) => {
-    return dispatch => {
+export const getCurrentUser = (data) => {
+    return (dispatch) => { 
+        return fetch("https://bloom-delivery-api.herokuapp.com/api/v1/get_current_user", {
+            credentials: "include",
+            method: "GET", 
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then (response => response.json())
+        .then(user => {
+            if (user.error) {
+                console.log(user.error)
+            } else {
+                dispatch(setCurrentUser(user.data))
+                dispatch(fetchOrders())
+            }
+        })
+        .catch(console.log())
+    }
+}
+
+export const signup = (credentials, history) => {
+    return (dispatch) => {
       const userInfo = {
-        user: info
+        user: credentials
       }
-      return fetch("http://bloom-delivery-api.herokuapp.com/api/v1/signup", {
+      return fetch("https://bloom-delivery-api.herokuapp.com/api/v1/signup", {
         credentials: "include",
         method: "POST",
         headers: {
@@ -32,15 +82,16 @@ export const signup = (info, history) => {
         },
         body: JSON.stringify(userInfo)
       })
-        .then(r => r.json())
-        .then(response => {
-          if (response.error) {
-            alert(response.error)
+        .then(response => response.json())
+        .then(user => {
+          if (user.error) {
+            console.log(user.error)
           } else {
-            dispatch(setCurrentUser(response.data))
+            dispatch(setCurrentUser(user.data))
             dispatch(fetchOrders())
             dispatch(resetSignupForm())
             history.push('/')
+            console.log("Creating a new profile as: " + user.data.name + " -- " + user.data.email)
           }
         })
         .catch(console.log)
@@ -48,24 +99,27 @@ export const signup = (info, history) => {
   }
 
 
-export const login = (info, history) => {
+export const login = (credentials, history) => {
     return dispatch => { 
-        return fetch("http://bloom-delivery-api.herokuapp.com/api/v1/login", {
+        return fetch("https://bloom-delivery-api.herokuapp.com/api/v1/login", {
             credentials: "include",
             method: "POST", 
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(info)
+            body: JSON.stringify(credentials)
         })
-        .then (r => r.json())
+        .then (response => response.json())
         .then(user => {
             if (user.error) {
-                alert(user.error)
+                console.log(user.error)
             } else {
                 dispatch(setCurrentUser(user.data))
                 dispatch(fetchOrders())
                 dispatch(resetLoginForm())
+                history.push('/')
+                console.log("Logging in as: " + user.data.attributes.name + " -- " + user.data.attributes.email)
+
                 
             }
         })
@@ -73,34 +127,14 @@ export const login = (info, history) => {
     }
 }
 
-export const logout = () => {
-    return dispatch => {
+export const logout = (event) => {
+    return (dispatch) => {
         dispatch(clearCurrentUser())
-        return fetch('http://bloom-delivery-api.herokuapp.com/api/v1/logout', {
+        return fetch('https://bloom-delivery-api.herokuapp.com/api/v1/logout', {
             credentials: "include",
             method: "DELETE"
-        })
+        }),
+        console.log("Logout made successfully ✌🏼")
     }
 }
 
-export const getCurrentUser = () => {
-    return dispatch => { 
-        return fetch("http://bloom-delivery-api.herokuapp.com/api/v1/get_current_user", {
-            credentials: "include",
-            method: "GET", 
-            headers: {
-                "Content-Type": "application/json"
-            },
-        })
-        .then (response => response.json())
-        .then(user => {
-            if (user.error) {
-                alert(user.error)
-            } else {
-                dispatch(setCurrentUser(user.data))
-                dispatch(fetchOrders())
-            }
-        })
-        .catch(console.log())
-    }
-}
