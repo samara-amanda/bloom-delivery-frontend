@@ -4,7 +4,6 @@ import Logout from '../components/Logout'
 const NavBar = ({currentUser}) => {
 
     return (
-        <div>
         <div className="navbar-fixed">
             <nav>
                 <div className="nav-wrapper red lighten-3">
@@ -22,7 +21,6 @@ const NavBar = ({currentUser}) => {
                     
                 </div>
             </nav>
-        </div>
         </div>
         
     )
