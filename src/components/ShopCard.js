@@ -28,7 +28,7 @@ const ShopCard = ({ items }) => {
                                         <div className="card-image">
                                             <img className="activator" src={i.attributes.image} alt="item" />
                                             <br></br>
-                                            <span className="card-title"><Link to="/item">{i.attributes.name}</Link></span>
+                                            <span className="card-title"><Link to={"/item/" + i.id}>{i.attributes.name}</Link></span>
                                         </div>
                                         <div className="card-content grey lighten-4">
                                             <p>${i.attributes.price}.00</p>      
