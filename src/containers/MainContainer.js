@@ -23,9 +23,9 @@ class MainContainer extends Component {
                 <NavBar currentUser={loggedIn} />
                 <Switch>
                     <Route exact path='/' component={Home}/>
-                    <Route exact path='/signup' render={() => loggedIn ? <Redirect to="/"/> : <Signup/>}/>
-                    <Route exact path='/login' render={() => loggedIn ? <Redirect to="/"/> : <Login/>}/>
-                    <Route exact path='/about' render={() => <About/>}/>
+                    <Route exact path='/signup' component={Signup}/>
+                    <Route exact path='/login' component={Login}/>
+                    <Route exact path='/about' component={About}/>
                 </Switch>
             </div>
         )
